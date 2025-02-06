@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>RoboPoint</title>
-    <meta name="description" content="RoboPoint: A Vision-Language Model for Spatial Affordance Prediction for Robotics">
-    <meta name="keywords" content="Foundation Model, Affordance Prediction">
+    <title>FSD</title>
+    <meta name="description" content="From Seeing to Doing: Bridging Reasoning and Decision for Robotic Manipulation">
+    <meta name="keywords" content="Foundation Model, Affordance Prediction, Robotics">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -43,21 +43,21 @@
 </head>
 
 <body onload="updateManipMethodVideo(); updateNavMethodVideo();">
-
+<!-- 
     <section class="hero">
         <div class="hero-body">
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">
-                            RoboPoint: A Vision-Language Model for Spatial Affordance Prediction for Robotics
+                            FSD: From Seeing to Doing: Bridging Reasoning and Decision for Robotic Manipulation
                         </h1>
                         <h3 class="title is-4 conference-authors">
                             <a target="_blank" href="https://robot-colosseum.github.io/">
                                 CoRL 2024
                             </a>
-                        </h3>
-                        <div class="is-size-5 publication-authors">
+                        </h3> -->
+                        <!-- <div class="is-size-5 publication-authors">
                             <span class="author-block">
                                 <a target="_blank" href="https://wentaoyuan.github.io/">Wentao Yuan</a><sup>1</sup>,
                             </span>
@@ -82,54 +82,15 @@
                             <span class="author-block">
                                 <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1, 2</sup>
                             </span>
-                        </div>
-                        <div class="is-size-5 publication-authors">
+                        </div> -->
+                        <!-- <div class="is-size-5 publication-authors">
                             <span class="author-block"><sup>1</sup>University of Washington</span>
                             <span class="author-block"><sup>2</sup>NVIDIA</span>
                             <br>
                             <span class="author-block"><sup>3</sup>Allen Institute for Artifical Intelligence</span>
                             <span class="author-block"><sup>4</sup>Universidad Católica San Pablo</span>
-                        </div>
+                        </div> 
                         <div class="column has-text-centered">
-                            <!-- ArXiv link -->
-                            <span class="link-block">
-                                <a target="_blank" href="https://arxiv.org/pdf/2406.10721" class="external-link button is-normal is-rounded is-dark">
-                                    <span class="icon"><i class="fas fa-file"></i></span>
-                                    <span>ArXiv</span>
-                                </a>
-                            </span>
-                            <!-- Code Link. -->
-                            <span class="link-block">
-                                <a target="_blank" href="https://github.com/wentaoyuan/RoboPoint" class="external-link button is-normal is-rounded is-dark">
-                                    <span class="icon"><i class="fab fa-github"></i></span>
-                                    <span>Code</span>
-                                </a>
-                            </span>
-                            <!-- Dataset Link. -->
-                            <span class="link-block">
-                                <a target="_blank" href="https://huggingface.co/datasets/wentao-yuan/robopoint-data" class="external-link button is-normal is-rounded is-dark">
-                                    <span class="icon"><i class="fas fa-database"></i></span>
-                                    <span>Dataset</span>
-                                </a>
-                            </span>
-                            <span class="link-block">
-                            <a target="_blank" href="https://huggingface.co/wentao-yuan/robopoint-v1-vicuna-v1.5-13b" class="external-link button is-normal is-rounded is-dark">
-                                <span class="icon"><i class="fas fa-check"></i></span>
-                                <span>Checkpoints</span>
-                            </a>
-                        </span>
-                            <span class="link-block">
-                                <a target="_blank" href="https://e2966b5a674aba3d06.gradio.live/" class="external-link button is-normal is-rounded is-dark">
-                                    <span class="icon"><i class="fas fa-laptop"></i></span>
-                                    <span>Demo</span>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Teaser and Abstract -->
     <section class="section">
@@ -147,21 +108,7 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            From rearranging objects on a table to putting groceries into shelves,
-                            robots must plan precise action points to perform tasks accurately and reliably. In
-                            spite of the recent adoption of vision language models (VLMs) to control robot
-                            behavior, VLMs struggle to precisely articulate robot actions using language. We
-                            introduce an automatic synthetic data generation pipeline that instruction-tunes
-                            VLMs to robotic domains and needs. Using the pipeline, we train <span class="drobopoint">ROBOPOINT</span>,
-                            a VLM that predicts image keypoint affordances given language instructions. Compared
-                            to alternative approaches, our method requires no real-world data collection
-                            or human demonstration, making it much more scalable to diverse environments
-                            and viewpoints. In addition, <span class="drobopoint">ROBOPOINT</span> is a general
-                            model that enables several downstream applications such as robot navigation,
-                            manipulation, and augmented reality (AR) assistance. Our experiments demonstrate
-                            that <span class="drobopoint">ROBOPOINT</span> outperforms state-of-the-art
-                            VLMs (GPT-4o) and visual prompting techniques (PIVOT) by 21.8% in the accuracy
-                            of predicting spatial affordance and by 30.5% in the success rate of downstream tasks.
+                            Achieving generalization in robotic manipulation remains a critical challenge, particularly for unseen scenarios and novel tasks. Current Vision-Language-Action (VLA) models, while building on top of general Vision-Language Models (VLMs), still fall short of achieving robust zero-shot performance due to the scarcity and heterogeneity prevalent in embodied datasets. To overcome these limitations, we introduce FSD (From Seeing to Doing), a novel VLM architecture that leverages hierarchical spatial reasoning to generate visual intermediate representations, providing granular guidance for robotic manipulation. We demonstrate that extracting general structural knowledge from pre-training and applying complex reasoning through instruction tuning results in superior performance. Our approach incorporates a hierarchical data pipeline for training, along with a self-consistency mechanism that aligns spatial coordinates with visual and language modalities. Experimental results confirm that FSD outperforms established baselines in fundamental spatial benchmarks and demonstrates zero-shot generalization capabilities in real-world robotic manipulation, achieving 73% success rate in total 8 tasks, without any fine-tuning. 
                         </p>
                     </div>
                 </div>
@@ -170,145 +117,7 @@
         </div>
     </section>
 
-    <section>
-        <div class="container is-max-desktop">
-            <div class="columns is-centered">
-                <div class="column is-full-width">
-                    <h2 class="title is-3">RoboPoint Downstream Applications</h2>
-                    <div class="columns is-vcentered interpolation-panel">
-                        <div class="column  has-text-centered">
-                            <video autoplay controls muted loop playsinline>
-                                <source src="static/videos/vid_ar.mp4" type="video/mp4">
-                            </video>
-                            <p >AR Assistance</p>
-                        </div>
-                        <div class="column  has-text-centered">
-                            <video autoplay controls muted loop playsinline>
-                                <source src="static/videos/vid_manipulation.mp4" type="video/mp4">
-                            </video>
-                            <p >Manipulation</p>
-                        </div>
-                        <div class="column  has-text-centered">
-                            <video autoplay controls muted loop playsinline>
-                                <source src="static/videos/vid_navigation.mp4" type="video/mp4">
-                            </video>
-                            <p >Navigation</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container is-max-widescreen">
-            <div class="rows">
-                <div class="rows is-centered ">
-                    <h2 class="title is-3 has-text-centered">RoboPoint Overview</h2>
 
-                    <figure>
-                        <img src="static/images/overview.png" alt="Robot Arm">
-                        <figcaption>An RGB image is rendered from a procedurally generated 3D scene. We compute spatial relations from the camera's perspective and generate affordances by sampling points within object masks and object-surface intersections. These instruction-point pairs fine-tune the language model. During deployment, RoboPoint predicts 2D action points from an image and instruction, which are projected into 3D using a depth map. The robot then navigates to these 3D targets with a motion planner.</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-    <div class="container is-max-widescreen">
-        <div class="rows is-centered">
-            <h2 class="title is-3 has-text-centered">Dataset for instruction fine-tuning</h2>
-
-            <figure class="has-text-centered">
-                <img src="static/images/data.png" alt="Robot Arm">
-                <figcaption>We combine object and space reference data with VQA and object detection data. RoboPoint leverages spatial reasoning, object detection, and affordance prediction from these diverse sources, enabling it to generalize combinatorially.</figcaption>
-            </figure>
-            <figure class="has-text-centered">
-                <img src="static/images/c.png" alt="Robot Arm">
-                <figcaption>Examples from the synthetic dataset used to teach RoboPoint relational object reference and free space reference. The red and ground boxes are visual prompts to indicate reference objects and the cyan dots are the visualized ground truth (not included in the image inputs to the model).</figcaption>
-            </figure>
-        </div>
-    </div>
-<section class="section">
-    <div class="container is-max-widescreen">
-        <div class="rows is-centered">
-            <h2 class="title is-3 has-text-centered">Evaluation Results</h2>
-
-            <figure class="has-text-centered">
-                <img src="static/images/Evaluation performance.png" alt="Robot Arm">
-                <figcaption>Qualitative results on RoboRefIt (a, b) and WHERE2PLACE (c, d, e, f, g, h), including cases with relations unseen during training (d, e, f, h) and where GPT-4o performs better (g, h).</figcaption>
-            </figure>
-        </div>
-    </div>
-</section>
-
-
-
-    
-
-    <!-- Manipulation method comparison -->
-    <section class="section">
-        <div class="container is-max-widescreen">
-            <div class="rows">
-                <div class="rows is-centered ">
-                    <div class="row is-full-width">
-                        <h2 class="title is-3">RoboPoint Application Results</h2>
-                        <div class="columns">
-                            <div class="column has-text-centered">
-                                <h3 class="title is-5">Manipulation Results</h3>
-                                Method
-                                <div class="select is-small">
-                                    <select id="single-menu-method-manipulation" onchange="updateManipMethodVideo()">
-                                        <option value="gpt4v" selected="selected">GPT4-V</option>
-                                        <option value="pivot">PIVOT</option>
-                                        <option value="qwenvl">QwenVL</option>
-                                        <option value="robopoint">RoboPoint</option>
-                                    </select>
-                                </div>
-                                <br>
-                                <br>
-                                <video id="result-manipulation-video" muted autoplay loop>
-                                    <source src="static/videos/results/manipulation/gpt4v.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /Manipulation method comparison -->
-
-    <!-- Navigation method comparison -->
-    <section class="section">
-        <div class="container is-max-widescreen">
-            <div class="rows">
-                <div class="rows is-centered ">
-                    <div class="row is-full-width">
-                        <div class="columns">
-                            <div class="column has-text-centered">
-                                <h3 class="title is-5">Navigation Results</h3>
-                                Method
-                                <div class="select is-small">
-                                    <select id="single-menu-method-navigation" onchange="updateNavMethodVideo()">
-                                        <option value="gpt4v" selected="selected">GPT4-V</option>
-                                        <option value="pivot">PIVOT</option>
-                                        <option value="robopoint">RoboPoint</option>
-                                    </select>
-                                </div>
-                                <br>
-                                <br>
-                                <video id="result-navigation-video" muted autoplay loop>
-                                    <source src="static/videos/results/navigation/gpt4v.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /Navigation method comparison -->
 
 
 </body>
